@@ -4,8 +4,7 @@
   "description": "Arrange big json configs along folders and files",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha",
-    "build-docs": "node ./_assets/createdocs.js && cat ./_assets/readme.md ./_assets/api.md ./_assets/footer.md > ./README.md"
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -23,8 +22,7 @@
   "homepage": "https://github.com/jacoborus/deepJSON",
   "devDependencies": {
     "chai": "^1.9.2",
-    "mocha": "^2.0.1",
-    "updox": "0.0.5"
+    "mocha": "^2.0.1"
   },
   "dependencies": {
     "extend": "^2.0.0"

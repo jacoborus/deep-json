@@ -4,20 +4,43 @@ var fs = require('fs'),
     path = require('path'),
     extend = require('extend');
 
-
+// return true if path is directory
 var isDir = function (dir) {
     return fs.existsSync(dir) ? fs.lstatSync( dir ).isDirectory() : false;
 };
 
-
-// get namesake folder
+// get namesake folder from json file
 var getNamesake = function (file) {
     var folder = path.dirname(file) + '/' + path.basename( file, '.json' );
 
-    return fs.existsSync(folder) ? folder : false;
+    return fs.existsSync(folder) && isDir(folder) ? folder : false;
 };
 
+// get an object with file and folder names of a folder
+var getFolderElements = function (parent) {
+    var elems = fs.readdirSync( parent ),
+        d = {
+            files : [],
+            folders : []
+        },
+        el, i;
 
+    // fill files and folders objects with paths
+    for (i in elems) {
+        el = parent + '/' + elems[i];
+        if (!isDir( el )) {
+            d.files.push( el );
+        } else {
+            // add folder only if has no namesake json
+            if (!fs.existsSync( el + '.json')) {
+                d.folders.push( el );
+            }
+        }
+    }
+    return d;
+};
+
+// get data file and extend it with its namesake folder data
 var getFile = function (file) {
     var config = require( file ),
         namesake = getNamesake( file );
@@ -26,28 +49,28 @@ var getFile = function (file) {
 };
 
 
+// get data from folders and files inside a folder
 var getFolder = function (folder) {
-    var els = fs.readdirSync( folder ),
+    var elems = getFolderElements( folder ),
         result = {},
-        route, fileName, namesake, i;
+        route, fileName, i;
 
-    for (i in els) {
+    // files
+    for (i in elems.files) {
+        route = elems.files[i];
+        // get object name
+        fileName = path.basename( elems.files[i], '.json' );
+        // assign object data from file
+        result[ fileName ] = getFile( route );
+    }
 
-        route = folder + '/' + els[i];
-
-        if (!isDir( route )) {
-            // get object name
-            fileName = els[i].split('.')[0];
-            // assign object data from file
-            result[ fileName ] = getFile( route );
-
-            // get name of child folder
-            namesake = getNamesake( route );
-            // assign data from folder if this exists
-            if (namesake) {
-                result[ fileName ] = extend( result[ fileName ], getFolder( namesake ));
-            }
-        }
+    // no namesake folders
+    for (i in elems.folders) {
+        route = elems.folders[i];
+        // get object name
+        fileName = path.basename( route );
+        // assign data from folder
+        result[ fileName ] = extend( result[ fileName ] || {}, getFolder( route ));
     }
 
     return result;
