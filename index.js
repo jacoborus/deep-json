@@ -40,40 +40,43 @@ var getFolderElements = function (parent) {
     return d;
 };
 
-// get data file and extend it with its namesake folder data
-var getFile = function (file) {
-    var config = require( file ),
-        namesake = getNamesake( file );
 
-    return namesake ? extend( config, getFolder( namesake )) : config;
-};
+var getData = {
 
+    // get data file and extend it with its namesake folder data
+    file : function (file) {
+        var config = require( file ),
+            namesake = getNamesake( file );
 
-// get data from folders and files inside a folder
-var getFolder = function (folder) {
-    var elems = getFolderElements( folder ),
-        result = {},
-        route, fileName, i;
+        return namesake ? extend( config, getData.folder( namesake )) : config;
+    },
 
-    // files
-    for (i in elems.files) {
-        route = elems.files[i];
-        // get object name
-        fileName = path.basename( elems.files[i], '.json' );
-        // assign object data from file
-        result[ fileName ] = getFile( route );
+    // get data from folders and files inside a folder
+    folder : function (folder) {
+        var elems = getFolderElements( folder ),
+            result = {},
+            route, fileName, i;
+
+        // files
+        for (i in elems.files) {
+            route = elems.files[i];
+            // get object name
+            fileName = path.basename( elems.files[i], '.json' );
+            // assign object data from file
+            result[ fileName ] = getData.file( route );
+        }
+
+        // no namesake folders
+        for (i in elems.folders) {
+            route = elems.folders[i];
+            // get object name
+            fileName = path.basename( route );
+            // assign data from folder
+            result[ fileName ] = extend( result[ fileName ] || {}, getData.folder( route ));
+        }
+
+        return result;
     }
-
-    // no namesake folders
-    for (i in elems.folders) {
-        route = elems.folders[i];
-        // get object name
-        fileName = path.basename( route );
-        // assign data from folder
-        result[ fileName ] = extend( result[ fileName ] || {}, getFolder( route ));
-    }
-
-    return result;
 };
 
 
@@ -90,7 +93,7 @@ module.exports = function () {
             throw new Error( 'link-json: bad file argument' );
         }
 
-        configs[i] = getFile( path.resolve( arguments[i] ));
+        configs[i] = getData.file( path.resolve( arguments[i] ));
     }
 
     return extend.apply( {}, configs );
