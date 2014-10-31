@@ -67,6 +67,6 @@ npm install && npm test
 
 ---
 
-© 2014 [jacoborus](https://github.com/jacoborus)
+© 2014 [Jacobo Tabernero](https://github.com/jacoborus)
 
-Released under [MIT License](https://raw.github.com/jacoborus/deepjson/master/LICENSE)
+Released under [MIT License](https://raw.github.com/jacoborus/deepJSON/master/LICENSE)
