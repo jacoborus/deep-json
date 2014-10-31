@@ -37,7 +37,7 @@ var defaultConfig = deepjson( 'config.json' );
     port: 3000,
     SEO: {
         title: 'Greengrocer',
-        description': 'We sell fresh lemmons!'
+        description': 'Fresh lemmons!'
         keywords: ['apples', 'oranges', 'lemmons']
     }
 } */
@@ -49,7 +49,7 @@ var productionConfig = deepjson( 'config.json', 'production.json' );
     port: 4444,
     SEO: {
         title: 'Greengrocer',
-        description': 'We sell fresh lemmons!'
+        description': 'Fresh lemmons!'
         keywords: ['apples', 'oranges', 'lemmons']
     }
 } */
