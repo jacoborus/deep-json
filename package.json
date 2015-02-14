@@ -1,6 +1,6 @@
 {
   "name": "deepjson",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A better way to work with big json config files",
   "main": "index.js",
   "scripts": {

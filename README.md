@@ -41,8 +41,8 @@ Example
 
 .jsons and folders structure:
 ```
-├── config.json: {"appname": "Fruits app", port: 3000}
-├── production.json: {port: 4444}
+├── config.json: {"appname": "Fruits app", "port": 3000}
+├── production.json: {"port": 4444}
 ├── config (folder)
 │   ├── SEO.json: {"description": "Fresh lemmons!" }
 ```
