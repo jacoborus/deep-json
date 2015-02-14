@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg4112"
+   viewBox="0 0 600.00005 300.00001"
+   height="300"
+   width="600">
+  <defs
+     id="defs4114" />
+  <metadata
+     id="metadata4117">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-752.36217)"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90px;line-height:125%;font-family:Signika;-inkscape-font-specification:'Signika Bold';letter-spacing:0px;word-spacing:0px;fill:#d5f6ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="76.414726"
+       y="930.08215"
+       id="text4074"><tspan
+         id="tspan4076"
+         x="76.414726"
+         y="930.08215"><tspan
+           id="tspan4080"
+           style="fill:#87cdde">{deep</tspan><tspan
+           style="fill:#004455"
+           id="tspan4078">.json}</tspan></tspan></text>
+  </g>
+</svg>

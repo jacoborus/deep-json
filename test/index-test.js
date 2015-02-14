@@ -11,7 +11,7 @@ describe( 'deepJSON', function () {
 	it('Requires a master json file', function () {
 		expect( function () {
 			deepjson(4);
-		}).to.throw( 'link-json: bad file argument' );
+		}).to.throw( 'deep-json: bad file argument' );
 	});
 	it('Recover simple json files', function () {
 		expect( deepjson( './test/assets/simple.json' ).main ).to.equal( 1 );

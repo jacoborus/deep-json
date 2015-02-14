@@ -1,6 +1,6 @@
 {
   "name": "deepjson",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Arrange big json configs along folders and files",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jacoborus/deepJSON",
   "devDependencies": {
-    "chai": "^1.9.2",
+    "chai": "^2.0.0",
     "mocha": "^2.0.1"
   },
   "dependencies": {
