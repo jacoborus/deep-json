@@ -1,7 +1,7 @@
 ![deep.json](https://raw.githubusercontent.com/jacoborus/deepJSON/master/brand/logo.png 'deepjson logo')
 ========================================================================================================
 
-A better way to work with big json config files
+A better way to work with big json config files in node.js apps
 
 [![Build Status](https://travis-ci.org/jacoborus/deepJSON.svg?branch=master)](https://travis-ci.org/jacoborus/deepJSON)
 
@@ -32,7 +32,7 @@ Load all the json files passed as arguments, then extend them with json files un
 
 **Parameters:**
 
-- **jsonFile** *String*: path to file
+- **jsonFile** *String*: path to file (with or without extension)
 - **Return** *Object*: extended object
 
 
@@ -50,7 +50,7 @@ Example
 ```js
 var deepjson = require( 'deepjson' );
 
-var defaultConfig = deepjson( 'config.json' );
+var defaultConfig = deepjson( 'config' );
 /* {
     appname: 'Fruits app',
     port: 3000,
@@ -60,7 +60,7 @@ var defaultConfig = deepjson( 'config.json' );
 } */
 
 
-var productionConfig = deepjson( 'config.json', 'production.json' );
+var productionConfig = deepjson( 'config', 'production' );
 /* {
     appname: 'Fruits app',
     port: 4444,
@@ -82,6 +82,6 @@ npm install && npm test
 
 ---
 
-© 2014 [Jacobo Tabernero](https://github.com/jacoborus)
+© 2015 [Jacobo Tabernero](https://github.com/jacoborus)
 
 Released under [MIT License](https://raw.github.com/jacoborus/deepJSON/master/LICENSE)

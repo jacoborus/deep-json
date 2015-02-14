@@ -14,21 +14,21 @@ describe( 'deepJSON', function () {
 		}).to.throw( 'deep-json: bad file argument' );
 	});
 	it('Recover simple json files', function () {
-		expect( deepjson( './test/assets/simple.json' ).main ).to.equal( 1 );
+		expect( deepjson( './test/assets/simple' ).main ).to.equal( 1 );
 	});
 	it('Extend values with folder named equal as json', function () {
-		expect( deepjson( './test/assets/folder.json' ).file.third ).to.equal( 3 );
+		expect( deepjson( './test/assets/folder' ).file.third ).to.equal( 3 );
 	});
 	it('Extend values with folders with no json namesake', function () {
-		expect( deepjson( './test/assets/folder.json' ).nonamesake.list[0] ).to.equal( 9 );
+		expect( deepjson( './test/assets/folder' ).nonamesake.list[0] ).to.equal( 9 );
 	});
 	it('Extend values with folder and subfolders', function () {
-		expect( deepjson( './test/assets/folder.json' ).nested.list[0] ).to.equal( 1 );
+		expect( deepjson( './test/assets/folder' ).nested.list[0] ).to.equal( 1 );
 	});
 	it('Extend first argument value with second one', function () {
-		expect( deepjson( './test/assets/folder.json', './test/assets/second.json' ).main ).to.equal( 2 );
+		expect( deepjson( './test/assets/folder', './test/assets/second' ).main ).to.equal( 2 );
 	});
 	it('Extend second argument value with third one', function () {
-		expect( deepjson( './test/assets/folder.json', './test/assets/second.json', './test/assets/third.json' ).main ).to.equal( 3 );
+		expect( deepjson( './test/assets/folder', './test/assets/second', './test/assets/third' ).main ).to.equal( 3 );
 	});
 });
