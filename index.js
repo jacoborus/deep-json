@@ -9,14 +9,14 @@ var isDir = function (dir) {
 	return fs.existsSync(dir) ? fs.lstatSync( dir ).isDirectory() : false;
 };
 
-// get namesake folder from json file
+// return path of folder with same name as .json file if exists
 var getNamesake = function (file) {
 	var folder = path.dirname(file) + '/' + path.basename( file, '.json' );
 
 	return fs.existsSync(folder) && isDir(folder) ? folder : false;
 };
 
-// get the objects (files and folders) of a folder
+// get the of files and folders inside a folder
 var getFolderElements = function (parent) {
 	var elems = fs.readdirSync( parent ),
 		d = {
@@ -24,7 +24,7 @@ var getFolderElements = function (parent) {
 			folders : []
 		};
 
-	// fill files and folders objects with paths
+	// get files and folders paths
 	elems.forEach( function (elem) {
 		var el = parent + '/' + elem;
 		if (!isDir( el )) {
@@ -41,7 +41,7 @@ var getFolderElements = function (parent) {
 
 var getData = {
 
-	// get data file and extend it with its namesake folder data
+	// get file data and extend it with folder data of folder with same name
 	file : function (file) {
 		var config = require( file ),
 			namesake = getNamesake( file );

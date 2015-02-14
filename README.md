@@ -45,6 +45,8 @@ Example
 ├── production.json: {"port": 4444}
 ├── config (folder)
 │   ├── SEO.json: {"description": "Fresh lemmons!" }
+│   ├── SEO (folder)
+│       ├── keywords.json: ["a", "big", "array"]
 ```
 
 ```js
@@ -55,7 +57,8 @@ var defaultConfig = deepjson( 'config' );
     appname: 'Fruits app',
     port: 3000,
     SEO: {
-        description': 'Fresh lemmons!'
+        description: 'Fresh lemmons!',
+        keywords: ['a', 'big', 'array']
     }
 } */
 
@@ -65,7 +68,8 @@ var productionConfig = deepjson( 'config', 'production' );
     appname: 'Fruits app',
     port: 4444,
     SEO: {
-        description': 'Fresh lemmons!'
+        description: 'Fresh lemmons!',
+        keywords: ['a', 'big', 'array']
     }
 } */
 ```
