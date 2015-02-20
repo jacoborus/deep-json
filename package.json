@@ -4,7 +4,7 @@
   "description": "A better way to work with big json config files",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

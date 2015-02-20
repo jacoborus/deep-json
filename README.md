@@ -6,12 +6,12 @@ A better way to work with big json config files in node.js apps
 [![Build Status](https://travis-ci.org/jacoborus/deepJSON.svg?branch=master)](https://travis-ci.org/jacoborus/deepJSON)
 
 
-What is this all about?
------------------------
+Why
+---
 
-Sometimes config files grows to sizes difficult to handle, therefore it is desirable to distribute information in different files and folders.
+Sometimes config files grow to sizes that are difficult to handle, therefore it is desirable to distribute information in different files and folders.
 
-If you hand out your config in files inside a folder named as main .json config file, deepJSON will populate it with this data folder. deepJSON will also extend this object with the following files (and its trees) that you have passed as arguments.
+If you hand out your config in files inside a folder named as your main json config file, deepJSON will populate it with this folder data. deepJSON will also extend this object with the following files (and its trees) that you have passed as arguments.
 
 
 Installation
