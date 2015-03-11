@@ -3,7 +3,7 @@
 
 A better way to work with big json config files in node.js apps
 
-[![Build Status](https://travis-ci.org/jacoborus/deepJSON.svg?branch=master)](https://travis-ci.org/jacoborus/deep-json)
+[![Build Status](https://travis-ci.org/jacoborus/deep-json.svg?branch=master)](https://travis-ci.org/jacoborus/deep-json)
 
 
 Why
