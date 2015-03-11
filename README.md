@@ -1,7 +1,9 @@
 ![deep.json](https://raw.githubusercontent.com/jacoborus/deepJSON/master/brand/logo.png 'deepjson logo')
 ========================================================================================================
 
-A better way to work with big json config files in node.js apps
+A better way to work with big json config files in node.js apps.
+
+[deepjson.jacoborus.codes](http://deepjson.jacoborus.codes)
 
 [![Build Status](https://travis-ci.org/jacoborus/deep-json.svg?branch=master)](https://travis-ci.org/jacoborus/deep-json)
 
