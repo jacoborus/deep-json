@@ -12,11 +12,10 @@ var isDir = function (dir) {
 // return path of folder with same name as .json file if exists
 var getNamesake = function (file) {
 	var folder = path.dirname(file) + '/' + path.basename( file, '.json' );
-
 	return fs.existsSync(folder) && isDir(folder) ? folder : false;
 };
 
-// get the of files and folders inside a folder
+// get the paths of files and folders inside a folder
 var getFolderElements = function (parent) {
 	var elems = fs.readdirSync( parent ),
 		d = {
@@ -84,7 +83,7 @@ module.exports = function () {
 	}
 
 	for (i in arguments) {
-		if (!arguments[i] || typeof arguments[i] !== 'string') {
+		if (typeof arguments[i] !== 'string') {
 			throw new Error( 'deep-json: bad file argument' );
 		}
 

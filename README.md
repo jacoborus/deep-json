@@ -1,7 +1,7 @@
 ![deep.json](https://raw.githubusercontent.com/jacoborus/deepJSON/master/brand/logo.png 'deepjson logo')
 ========================================================================================================
 
-A better way to work with big json config files in node.js apps.
+A better way to load big json config files in node.js apps.
 
 [deepjson.jacoborus.codes](http://deepjson.jacoborus.codes)
 
@@ -11,9 +11,7 @@ A better way to work with big json config files in node.js apps.
 Why
 ---
 
-Sometimes config files grow to sizes that are difficult to handle, therefore it is desirable to distribute information in different files and folders.
-
-If you hand out your config in files inside a folder named as your main json config file, deepJSON will populate it with this folder data. deepJSON will also extend this object with the following files (and its trees) that you have passed as arguments.
+Sometimes config files grow to sizes that are difficult to handle, therefore it is desirable to distribute information in different files and folders rather than having a single big JSON file, you can split it up across multiple files (and directories) and deep.json puts it all back together. deep.json will also extend this object with the following files (and its trees) that you have passed as arguments.
 
 
 Installation
@@ -88,6 +86,6 @@ npm install && npm test
 
 ---
 
-© 2015 [Jacobo Tabernero](https://github.com/jacoborus)
+© 2015 [Jacobo Tabernero](http://jacoborus.codes)
 
-Released under [MIT License](https://raw.github.com/jacoborus/deepJSON/master/LICENSE)
+Released under [MIT License](https://raw.github.com/jacoborus/deep-json/master/LICENSE)
