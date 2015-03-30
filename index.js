@@ -84,10 +84,15 @@ module.exports = function () {
 
 	for (i in arguments) {
 		if (typeof arguments[i] !== 'string') {
-			throw new Error( 'deep-json: bad file argument' );
+			if (typeof arguments[i] !== 'object' || typeof arguments[i].length !== 'undefined' || arguments[i] === null) {
+				throw new Error( 'deep-json: bad file argument' );
+			} else {
+				configs[i] = arguments[i];
+			}
+		} else {
+			configs[i] = getData.file( path.resolve( arguments[i] ));
 		}
 
-		configs[i] = getData.file( path.resolve( arguments[i] ));
 	}
 
 	return extend.apply( {}, configs );

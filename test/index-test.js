@@ -31,4 +31,7 @@ describe( 'deepJSON', function () {
 	it('Extend second argument value with third one', function () {
 		expect( deepjson( './test/assets/folder', './test/assets/second', './test/assets/third' ).main ).to.equal( 3 );
 	});
+	it('allow objects as params', function () {
+		expect( deepjson({ secondary: 2 }, './test/assets/simple' ).secondary ).to.equal( 2 );
+	});
 });

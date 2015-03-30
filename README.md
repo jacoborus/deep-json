@@ -25,14 +25,14 @@ $ npm install deepjson
 API
 ---
 
-### deepjson( jsonFile1, jsonFile2, ... )
+### deepjson( config1, config2, ... )
 
 Load all the json files passed as arguments, then extend them with json files under the folders with same name. Deepjson will return a object result of extend loaded files in order.
 
 
 **Parameters:**
 
-- **jsonFile** *String*: path to file (with or without extension)
+- **config** *String|Object*: path to file (with or without extension) or javascript object
 - **Return** *Object*: extended object
 
 
