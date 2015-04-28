@@ -1,6 +1,6 @@
 {
   "name": "deepjson",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A better way to load big json config files",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
     "mocha": "^2.0.1"
   },
   "dependencies": {
-    "extend": "^2.0.0"
+    "extend": "^2.0.1"
   }
 }
