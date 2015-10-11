@@ -21,8 +21,8 @@
   },
   "homepage": "http://deepjson.jacoborus.codes",
   "devDependencies": {
-    "chai": "^3.2.0",
-    "mocha": "^2.2.5"
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
   },
   "dependencies": {
     "extend": "^3.0.0"
